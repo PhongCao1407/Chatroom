@@ -1,0 +1,299 @@
+/* 
+CSS Reset
+http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*
+Application CSS
+*/
+
+
+html * {
+    font-family: "IBM Plex Sans", "Arial", "Sans Serif";
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("static/Caspar\ David\ Friedrich/Mountain\ Landscape.jpeg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 6fr 1fr 1fr;
+    align-items: center;
+    gap: 5px;
+    min-height: 60px;
+    padding: 5px 10px;
+    background-color: #ffffff;
+}
+
+.logo, .user-info, .settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.subscribed-subthread, .search {
+    
+}
+
+.logo {
+    display: flex;
+    padding: 0 10px;
+    height: 40px;
+    width: 40px;
+}
+
+
+.subscribed-subthread {
+    padding: 10px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.thread-bar {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.thread-bar>.home {
+    height: 30px;
+    width: 30px;
+    padding-bottom: 3px;
+}
+
+.thread-bar>p {
+    padding-left: 5px;
+    font-size: 17px;
+    font-weight: 1000;
+}
+
+.thread-bar>.down-arrow {
+    margin-left: auto;
+    height: 15px;
+    width: 15px;
+}
+
+.search {
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search>.search-bar {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.search>.search-bar>input {
+    height: 70%;
+    width: 100%;
+    background-color: #D1D9DF;
+    border-style: none;
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
+.user-info {
+    display: flex;
+    gap: 12px;
+}
+
+.user-info>img {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+}
+
+.settings>img {
+    height: 30px;
+    width: 30px;
+}
+
+
+
+/* Main */
+main {
+    height: 100%;
+    padding: 20px 20%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 550px;
+}
+
+.create-post {
+    height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    border-radius: 5px;
+}
+
+
+.create-post>img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: #e9e9e9 solid 0.5px;;
+}
+
+.create-post-input {
+    height: 70%;
+    width: 100%;
+    background-color: #D1D9DF;
+    border-style: none;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+/* TODO main */
+
+/* Sidebar */
+.sidebar {
+    width: 275px;
+    height: 250px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-banner {
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.mini-banner>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+
+
+.subthread-name {
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subthread-name>h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subthread-name>p {
+    font-size: 14px;
+}
+
+.line {
+    height: 1px;
+    background-color: #9c9c9c;
+    margin: 0 10px;
+}
+
+.sidebar-options {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.option, .option>button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+}
+
+.option>button {
+    font-weight: bold;
+}
+
+.create-post-option>button {
+    background-color: #ff5c5c;
+    color: #ffffff;
+}
+
+.create-community-option>button {
+    background-color: #ffffff;
+    color: #ff5c5c;
+    border: 1px solid #ff5c5c;
+}
