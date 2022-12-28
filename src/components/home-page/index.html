@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chatroom</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans">
     <link rel="stylesheet" href="styles.css">
     
@@ -36,14 +36,33 @@
     </header>
     <main>
         <div class="posts">
-            <div class="create-post post">
+            <div class="create-post">
                 <img src="static/User.png" alt="" srcset="">
                 <input type="text" placeholder="Create Post.." class="create-post-input">
             </div>
-            <div class="posts">
+            <div class="user-posts">
                 <div class="post">
                     <div class="like-bar">
-                        
+                        <img src="static/upvote.png" alt="" class="up arrow">
+                        <p>0</p>
+                        <img src="static/downvote.png" alt="" class="down arrow">
+                    </div>
+                    <div class="post-display">
+                        <div class="post-info">
+                            <p class="post-subthread-name">c/Home</p>
+                            <p class="post-username">User123456</p>
+                        </div>
+                        <div class="post-title">
+                            <h2>Lorem</h2>
+                        </div>
+                        <div class="main-post-display">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis nibh ut nisl sagittis, 
+                            vel condimentum mi molestie. Integer vitae volutpat eros, vitae cursus tellus. Phasellus maximus pretium malesuada.
+                        </div>
+                        <div class="post-options">
+                            <img src="static/Comment.png" alt="">
+                            <p>0 Comments</p>
+                        </div>
                     </div>
                 </div>
             </div>

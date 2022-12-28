@@ -218,7 +218,83 @@ main {
     padding: 0 10px;
 }
 
-/* TODO main */
+.user-posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    min-height: 200px;
+
+    /* Maybe change later */
+    max-height: 600px; 
+    
+    width: 550px;
+    border-radius: 5px;
+}
+
+.like-bar {
+    min-width: 35px;
+    max-width: 35px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px 0 0 5px;
+}
+
+.like-bar>.arrow {
+    height: 17px;
+    width: 17px;
+}
+
+.like-bar>p {
+    font-weight: bold;
+}
+
+.like-bar>.up {
+    padding-top: 10px;
+}
+
+.post-display {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
+    gap: 10px;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.post-info>.post-subthread-name {
+    font-weight: bold;
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.post-options {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.post-options>img {
+    height: 17px;
+    width: 17px;
+}
+
+
 
 /* Sidebar */
 .sidebar {
@@ -243,8 +319,6 @@ main {
     object-fit: cover;
     border-radius: 5px 5px 0 0;
 }
-
-
 
 .subthread-name {
     padding: 10px 10px;
@@ -297,3 +371,4 @@ main {
     color: #ff5c5c;
     border: 1px solid #ff5c5c;
 }
+
