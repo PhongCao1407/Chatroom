@@ -1,38 +1,178 @@
-.App {
-  text-align: center;
+/* 
+CSS Reset
+http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/*
+Application CSS
+*/
+
+
+html * {
+    font-family: "IBM Plex Sans", "Arial", "Sans Serif";
+    font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("static/Mountain\ Landscape.jpeg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 6fr 1fr 1fr;
+    align-items: center;
+    gap: 5px;
+    min-height: 60px;
+    padding: 5px 10px;
+    background-color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+.logo, .user-info, .settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.subscribed-subthread, .search {
+    
+}
+
+.logo {
+    display: flex;
+    padding: 0 10px;
+    height: 40px;
+    width: 40px;
+}
+
+
+.subscribed-subthread {
+    padding: 10px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.thread-bar {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.thread-bar>.home {
+    height: 30px;
+    width: 30px;
+    padding-bottom: 3px;
+}
+
+.thread-bar>p {
+    padding-left: 5px;
+    font-size: 17px;
+    font-weight: 1000;
+}
+
+.thread-bar>.down-arrow {
+    margin-left: auto;
+    height: 15px;
+    width: 15px;
+}
+
+.search {
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search>.search-bar {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.search>.search-bar>input {
+    height: 70%;
+    width: 100%;
+    background-color: #D1D9DF;
+    border-style: none;
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
+.user-info {
+    display: flex;
+    gap: 12px;
+}
+
+.user-info-bar>p {
+  font-weight: 500;
+}
+
+.user-info>img {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+}
+
+.settings>img {
+    height: 30px;
+    width: 30px;
 }

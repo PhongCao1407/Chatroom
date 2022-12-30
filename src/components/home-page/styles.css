@@ -181,7 +181,7 @@ main {
     padding: 20px 20%;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 20px;
+    gap: 15px;
 }
 
 .posts {
@@ -231,7 +231,7 @@ main {
 
     /* Maybe change later */
     max-height: 600px; 
-    
+
     width: 550px;
     border-radius: 5px;
 }
@@ -248,8 +248,8 @@ main {
 }
 
 .like-bar>.arrow {
-    height: 17px;
-    width: 17px;
+    height: 15px;
+    width: 15px;
 }
 
 .like-bar>p {
