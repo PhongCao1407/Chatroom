@@ -5,21 +5,10 @@ import downvote from "./static/downvote.svg";
 import bannerImage from "./static/Caspar David Friedrich/Landschaft mit Gebirgssee, Morgen.jpeg"
 import comment from "./static/Comment.png"
 
-import axios from 'axios';
-
-
+import testService from "../../services/testService";
 
 
 const HomePage = () => {
-    const testCreatePostButton = () => {
-        const promise = axios
-        .get('http://localhost:3001/api/notes')
-        .then(response => {        
-            console.log('promise fulfilled')
-            console.log(response.data)    
-        })
-    }
-
     return (
         <main>
             <div className="posts">
@@ -65,7 +54,7 @@ const HomePage = () => {
                 <div className="sidebar-options">
                     <div className="line"></div>
                     <div className="create-post-option option">
-                        <button onClick={testCreatePostButton}>Create Post</button>
+                        <button onClick={() => {testService.testCreatePostButton()}}>Create Post</button>
                     </div>
                     <div className="create-community-option option">
                         <button>Create Subthread</button>
