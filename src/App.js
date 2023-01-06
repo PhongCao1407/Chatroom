@@ -9,26 +9,26 @@ import setting from './static/Setting.svg';
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt="" class="logo"/>
-      <div class="subscribed-subthread">
-          <div class="thread-bar">
-              <img src={home} alt="" class="home"/>
+      <img src={logo} alt="" className="logo"/>
+      <div className="subscribed-subthread">
+          <div className="thread-bar">
+              <img src={home} alt="" className="home"/>
               <p>Home</p>
-              <img src={downArrow} alt="" class="down-arrow"/>
+              <img src={downArrow} alt="" className="down-arrow"/>
           </div>
       </div>    
-      <div class="search">
-          <div class="search-bar">
-              <input type="text" placeholder="Search.." class="search-bar-input"/>
+      <div className="search">
+          <div className="search-bar">
+              <input type="text" placeholder="Search.." className="search-bar-input"/>
           </div>
       </div>
-      <div class="user-info">
+      <div className="user-info">
           <img src={user} alt=""/>
-          <div class="user-info-bar">
+          <div className="user-info-bar">
               <p>Username123456</p>
           </div>
       </div>
-      <div class="settings">
+      <div className="settings">
           <img src={setting} alt=""/>
       </div>
     </header>

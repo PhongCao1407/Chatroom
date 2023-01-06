@@ -1,40 +1,52 @@
 import "./homePage.css";
 import userImage from "./static/User.png";
-import upvote from "./static/upvote.png";
-import downvote from "./static/downvote.png";
+import upvote from "./static/upvote.svg";
+import downvote from "./static/downvote.svg";
 import bannerImage from "./static/Caspar David Friedrich/Landschaft mit Gebirgssee, Morgen.jpeg"
 import comment from "./static/Comment.png"
-//Landschaft mit Gebirgssee, Morgen.jpeg 
+
+import axios from 'axios';
+
+
 
 
 const HomePage = () => {
+    const testCreatePostButton = () => {
+        const promise = axios
+        .get('http://localhost:3001/api/notes')
+        .then(response => {        
+            console.log('promise fulfilled')
+            console.log(response.data)    
+        })
+    }
+
     return (
         <main>
-            <div class="posts">
-                <div class="create-post">
-                    <img src={userImage} alt="" srcset=""/>
-                    <input type="text" placeholder="Create Post.." class="create-post-input"/>
+            <div className="posts">
+                <div className="create-post">
+                    <img src={userImage} alt="" srcSet=""/>
+                    <input type="text" placeholder="Create Post.." className="create-post-input"/>
                 </div>
-                <div class="user-posts">
-                    <div class="post">
-                        <div class="like-bar">
-                            <img src={upvote} alt="" class="up arrow"/>
+                <div className="user-posts">
+                    <div className="post">
+                        <div className="like-bar">
+                            <img src={upvote} alt="" className="up arrow"/>
                             <p>0</p>
-                            <img src={downvote} alt="" class="down arrow"/>
+                            <img src={downvote} alt="" className="down arrow"/>
                         </div>
-                        <div class="post-display">
-                            <div class="post-info">
-                                <p class="post-subthread-name">c/Home</p>
-                                <p class="post-username">u/User123456</p>
+                        <div className="post-display">
+                            <div className="post-info">
+                                <p className="post-subthread-name">c/Home</p>
+                                <p className="post-username">u/User123456</p>
                             </div>
-                            <div class="post-title">
+                            <div className="post-title">
                                 <h2>Lorem</h2>
                             </div>
-                            <div class="main-post-display">
+                            <div className="main-post-display">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis nibh ut nisl sagittis, 
                                 vel condimentum mi molestie. Integer vitae volutpat eros, vitae cursus tellus. Phasellus maximus pretium malesuada.
                             </div>
-                            <div class="post-options">
+                            <div className="post-options">
                                 <img src={comment} alt=""/>
                                 <p>0 Comments</p>
                             </div>
@@ -42,20 +54,20 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div class="sidebar">
-                <div class="mini-banner">
+            <div className="sidebar">
+                <div className="mini-banner">
                     <img src={bannerImage} alt=""/>
                 </div>
-                <div class="subthread-name">
+                <div className="subthread-name">
                     <h2>Home</h2>
                     <p>This is the Home subthread!</p>
                 </div>
-                <div class="sidebar-options">
-                    <div class="line"></div>
-                    <div class="create-post-option option">
-                        <button>Create Post</button>
+                <div className="sidebar-options">
+                    <div className="line"></div>
+                    <div className="create-post-option option">
+                        <button onClick={testCreatePostButton}>Create Post</button>
                     </div>
-                    <div class="create-community-option option">
+                    <div className="create-community-option option">
                         <button>Create Subthread</button>
                     </div>
                 </div>
