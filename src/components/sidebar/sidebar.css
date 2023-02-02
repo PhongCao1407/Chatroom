@@ -1,0 +1,83 @@
+/* Sidebar */
+.sidebar {
+    width: 275px;
+    height: 250px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-banner {
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.mini-banner>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.subthread-name {
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subthread-name>h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subthread-name>p {
+    font-size: 14px;
+}
+
+.line {
+    height: 1px;
+    background-color: #9c9c9c;
+    margin: 0 10px;
+}
+
+.sidebar-options {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.option, .option>button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+}
+
+.option>button {
+    font-weight: bold;
+}
+
+.create-post-option>button {
+    background-color: #ff5c5c;
+    color: #ffffff;
+}
+
+.create-post-option>button:hover {
+    background-color: #f97272;
+}
+
+.create-community-option>button {
+    background-color: #ffffff;
+    color: #ff5c5c;
+    border: 1px solid #ff5c5c;
+}
+
+.create-community-option>button:hover {
+    background-color: #fae8e8;   
+}

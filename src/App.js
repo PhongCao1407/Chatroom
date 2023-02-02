@@ -22,7 +22,10 @@ const Header = () => {
               <input type="text" placeholder="Search.." className="search-bar-input"/>
           </div>
       </div>
-      <div className="user-info">
+      <div class="user-auth">
+        <button>Login</button>
+      </div>
+      {/* <div className="user-info">
           <img src={user} alt=""/>
           <div className="user-info-bar">
               <p>Username123456</p>
@@ -30,7 +33,7 @@ const Header = () => {
       </div>
       <div className="settings">
           <img src={setting} alt=""/>
-      </div>
+      </div> */}
     </header>
   )
 }
