@@ -1,4 +1,4 @@
-import "./homePage.css";
+import "./thread.css"
 import userImage from "./static/User.png";
 import upvote from "./static/upvote.svg";
 import downvote from "./static/downvote.svg";
@@ -10,7 +10,7 @@ import testService from "../../services/testService";
 import {Posts} from "../posts/posts"
 import {Sidebar} from "../sidebar/sidebar"
 
-const HomePage = () => {
+const Thread = () => {
     return (
         <main>
             <div className="post-display">
@@ -27,4 +27,4 @@ const HomePage = () => {
 
 
 
-export {HomePage};
+export {Thread};
