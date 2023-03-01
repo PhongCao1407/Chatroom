@@ -9,10 +9,12 @@ import testService from "../../services/testService";
 
 import {Posts} from "../posts/posts"
 import {Sidebar} from "../sidebar/sidebar"
+import { CreatePost } from "../createPost/createPost";
 
 const Thread = () => {
     return (
         <main>
+            {/* <CreatePost/> */}
             <div className="post-display">
                 <div className="create-post">
                     <img src={userImage} alt="" srcSet=""/>

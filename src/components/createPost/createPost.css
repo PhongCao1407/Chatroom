@@ -1,0 +1,151 @@
+/* Make the form itself clear instead of blur */
+.createPostUnBlur {
+    filter: opacity(100%) !important;
+    z-index: 10;
+}
+
+
+/* Blur the whole page except for the form */
+.AppBlur div:not(.createPost){
+    filter: opacity(70%);
+    z-index: 1;
+}
+
+.createPost {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #ffffff;
+
+    height: 500px; 
+    width: 600px;
+
+    border-radius: 30px;
+
+    /* visibility: hidden; */
+}
+
+.createPost>.createPostTitle {
+    padding: 15px 20px;
+
+    background-color: #ff5c5c;
+
+    border-radius: 30px 30px 0 0;
+}
+
+.createPostTitle>h1 {
+    font-weight: 700;
+    font-size: 30px;
+    color: #ffffff;
+
+}
+
+.createPost>.createPostMain {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    padding: 20px 20px;
+
+    height: 100%;
+
+    
+}
+
+.createPostMain>.createPostSubthread {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.createPostSubthread>label {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.createPostSubthread>select {
+    background-color: #ffffff;
+    border: 1px solid #8a8989;
+    width: 150px;
+}
+
+.createPostMain>.createPostFields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+}
+
+.createPostFields>h2 {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.createPostFields>.createPostTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}   
+
+.createPostTitle>label {
+    font-size: 15px;
+
+}
+
+.createPostTitle>input {
+    width: 100%;
+}   
+
+.createPostFields>.createPostBody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    height: 100%;
+}   
+
+.createPostBody>label {
+    font-size: 15px;
+}
+
+.createPostBody>textarea {
+    height: 100%;
+    width: 100%;
+    resize: none;
+}   
+
+.createPostMain>.submitButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.submitButtons>button {
+    border-radius: 10px;
+    height: 25px;
+    width: 125px;
+
+    font-weight: 600;
+}
+
+.submitButtons>.submit {
+    background-color: #ff5c5c;
+    color: #ffffff;
+    border: none;
+}
+
+.submit:hover {
+    background-color: #f97272;
+}
+
+.submitButtons>.cancel {
+    background-color: #ffffff;
+    color: #ff5c5c;
+    border: 1px solid #ff5c5c;
+}
+
+.cancel:hover {
+    background-color: #fae8e8;   
+}
