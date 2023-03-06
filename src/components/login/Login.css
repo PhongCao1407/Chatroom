@@ -1,0 +1,141 @@
+/* Make the form itself clear instead of blur */
+.login-form-unblur {
+    filter: opacity(100%) !important;
+    z-index: 5;
+}
+
+
+/* Blur the whole page except for the form */
+.AppBlur div:not(.login-page) div:not(.create-post) {
+    filter: opacity(70%);
+    z-index: 1;
+}
+
+.login-page {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 40px;
+
+    background-image: url('./static/View\ of\ Arkona\ with\ Rising\ Moon.JPG');
+    background-position: center;
+    background-size: cover;
+
+
+    height: 450px;
+    width: 400px;
+
+    padding: 35px 25px;
+
+    border-radius: 10px;
+    border: 1.5px solid #d8d6d6;
+
+    /* visibility: hidden; */
+}
+
+.slider {
+    height: 52px;
+    width: 125px;
+    border-radius: 50px;
+    background-color: #f76c6c;
+    
+    position: absolute;
+    top: 35px;
+    left: 100px;
+    transition: all 0.5s ease-in-out;
+}
+
+.moveslider {
+    left: 225px;
+}
+
+.slider-options {
+    height: 65px;
+    width: 250px;
+
+    display: flex;
+    flex-direction: row;
+
+    box-shadow: 10px 10px 30px rgb(254, 215, 188);
+
+    border-radius: 50px;
+    
+}
+
+.slider-options>button {
+    width: 100%;
+    height: 100%;
+    border: none;
+
+    background-color: transparent;
+    color: #3c3c3c;
+
+    font-size: 1.1em;
+
+    font-weight: 600;
+}
+
+.slider-options>button:hover {
+    cursor: pointer;
+}
+
+#login-option, #signup-option {
+    position: relative;
+    z-index: 10;
+}
+
+
+#current-option {
+    color: #ffffff;
+    transition: all 0.5s ease-in
+}
+
+.signup-form {
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+    gap: 35px;
+}
+
+
+.signup-input {
+    height: 50px;
+    width: 85%;
+    border: none;
+    border-radius: 50px;
+    padding: 0 15px;
+
+    background-color: #eeeeee;
+    color: #303030;
+}
+
+.signup-input.confirm-password {
+    transition: all 0.5s ease-in;
+    opacity: 0%;
+}
+
+.signup-form>button {
+    height: 50px;
+    width: 50%;
+
+    border: none;
+    border-radius: 50px;
+    background-color: #f76c6c;
+
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: bold;
+
+}
+
+.signup-form>button:hover {
+    background-color: #f97272;
+    cursor: pointer;
+}

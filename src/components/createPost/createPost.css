@@ -1,17 +1,17 @@
 /* Make the form itself clear instead of blur */
-.createPostUnBlur {
+.create-post-unblur {
     filter: opacity(100%) !important;
     z-index: 10;
 }
 
 
 /* Blur the whole page except for the form */
-.AppBlur div:not(.createPost){
+.AppBlur div:not(.create-post) div:not(.login-page){
     filter: opacity(70%);
     z-index: 1;
 }
 
-.createPost {
+.create-post {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
     /* visibility: hidden; */
 }
 
-.createPost>.createPostTitle {
+.create-post>.create-post-title {
     padding: 15px 20px;
 
     background-color: #ff5c5c;
@@ -34,14 +34,14 @@
     border-radius: 30px 30px 0 0;
 }
 
-.createPostTitle>h1 {
+.create-post-title>h1 {
     font-weight: 700;
     font-size: 30px;
     color: #ffffff;
 
 }
 
-.createPost>.createPostMain {
+.create-post>.create-post-main {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -53,24 +53,24 @@
     
 }
 
-.createPostMain>.createPostSubthread {
+.create-post-main>.create-post-subthread {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.createPostSubthread>label {
+.create-post-subthread>label {
     font-weight: 600;
     font-size: 18px;
 }
 
-.createPostSubthread>select {
+.create-post-subthread>select {
     background-color: #ffffff;
     border: 1px solid #8a8989;
     width: 150px;
 }
 
-.createPostMain>.createPostFields {
+.create-post-main>.create-post-fields {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -78,27 +78,27 @@
     height: 100%;
 }
 
-.createPostFields>h2 {
+.create-post-fields>h2 {
     font-weight: 600;
     font-size: 22px;
 }
 
-.createPostFields>.createPostTitle {
+.create-post-fields>.create-post-title {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }   
 
-.createPostTitle>label {
+.create-post-title>label {
     font-size: 15px;
 
 }
 
-.createPostTitle>input {
+.create-post-title>input {
     width: 100%;
 }   
 
-.createPostFields>.createPostBody {
+.create-post-fields>.create-post-body {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -106,31 +106,32 @@
     height: 100%;
 }   
 
-.createPostBody>label {
+.create-post-body>label {
     font-size: 15px;
 }
 
-.createPostBody>textarea {
+.create-post-body>textarea {
     height: 100%;
     width: 100%;
     resize: none;
 }   
 
-.createPostMain>.submitButtons {
+.create-post-main>.submit-buttons {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
 
-.submitButtons>button {
+.submit-buttons>button {
     border-radius: 10px;
     height: 25px;
     width: 125px;
 
+
     font-weight: 600;
 }
 
-.submitButtons>.submit {
+.submit-buttons>.submit {
     background-color: #ff5c5c;
     color: #ffffff;
     border: none;
@@ -140,7 +141,7 @@
     background-color: #f97272;
 }
 
-.submitButtons>.cancel {
+.submit-buttons>.cancel {
     background-color: #ffffff;
     color: #ff5c5c;
     border: 1px solid #ff5c5c;

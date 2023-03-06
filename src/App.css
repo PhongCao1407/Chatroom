@@ -63,11 +63,14 @@ html * {
 body {
     display: flex;
     flex-direction: column;
+
     background-image: url("static/Mountain\ Landscape.jpeg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+	background-repeat: space;
 }
 
 

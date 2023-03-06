@@ -9,33 +9,33 @@ const CreatePost = () => {
     })
 
     return (
-        <form className="createPost createPostUnBlur">
-            <div className="createPostTitle createPostUnBlur" >
-                <h1 id="createPost">Create a Post</h1>
+        <form className="create-post create-post-unblur">
+            <div className="create-post-title create-post-unblur" >
+                <h1 id="create-post">Create a Post</h1>
             </div>
             
-            <div className="createPostMain createPostUnBlur">
-                <div className="createPostSubthread createPostUnBlur">
-                    <label htmlFor="subthread createPostUnBlur">Please Choose A Subthread</label>
-                    <select name="subthread createPostUnBlur">
-                        <option value="test createPostUnBlur">Subthread..</option>
+            <div className="create-post-main create-post-unblur">
+                <div className="create-post-subthread create-post-unblur">
+                    <label htmlFor="subthread create-post-unblur">Please Choose A Subthread</label>
+                    <select name="subthread create-post-unblur">
+                        <option value="test create-post-unblur">Subthread..</option>
                         
                     </select>
                 </div>
-                <div className="createPostFields createPostUnBlur">
-                    <h2 className="createPostUnBlur">Create The Post</h2>
-                    <div className="createPostTitle createPostUnBlur">
-                        <label htmlFor="title" className="createPostUnBlur">Post Title:</label>
-                        <input type="text" className="createPostUnBlur"/>
+                <div className="create-post-fields create-post-unblur">
+                    <h2 className="create-post-unblur">Create The Post</h2>
+                    <div className="create-post-title create-post-unblur">
+                        <label htmlFor="title" className="create-post-unblur">Post Title:</label>
+                        <input type="text" className="create-post-unblur"/>
                     </div>
-                    <div className="createPostBody createPostUnBlur">
-                    <label htmlFor="body" className="createPostUnBlur">Post Body:</label>
-                        <textarea className="createPostUnBlur"></textarea>
+                    <div className="create-post-body create-post-unblur">
+                    <label htmlFor="body" className="create-post-unblur">Post Body:</label>
+                        <textarea className="create-post-unblur"></textarea>
                     </div>
                 </div>
-                <div className="submitButtons createPostUnBlur">
-                    <button className="submit createPostUnBlur">Create Post</button>
-                    <button className="cancel createPostUnBlur">Cancel</button>
+                <div className="submit-buttons create-post-unblur">
+                    <button className="submit create-post-unblur">Create Post</button>
+                    <button className="cancel create-post-unblur">Cancel</button>
                 </div>
             </div> 
         </form>

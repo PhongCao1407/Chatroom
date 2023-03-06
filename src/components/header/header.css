@@ -105,10 +105,31 @@ header {
     border-radius: 5px;
 }
 
+.user-auth {
+    height: 100%;
+}
+
+.user-auth>button {
+    height: 70%;
+    width: 50%;
+    min-width: max-content;
+    border-radius: 50px;
+    border: none;
+    background-color: #ff5c5c;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.user-auth>button:hover {
+    background-color: #f97272;
+}
+
 #logout-button {
     margin-left: auto;
     height: 70%;
-    width: fit-content;
+    width: max-content;
+
     padding: 10px 15px;
     border-radius: 50px;
     border: none;
