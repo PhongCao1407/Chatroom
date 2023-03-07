@@ -70,6 +70,7 @@
 
 .create-post-option>button:hover {
     background-color: #f97272;
+    cursor: pointer
 }
 
 .create-community-option>button {
@@ -80,4 +81,5 @@
 
 .create-community-option>button:hover {
     background-color: #fae8e8;   
+    cursor: pointer;
 }

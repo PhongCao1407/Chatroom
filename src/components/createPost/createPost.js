@@ -1,12 +1,6 @@
 import './createPost.css'
 
-import { useEffect } from 'react'
-
 const CreatePost = () => {
-    useEffect(() => {
-        const App = document.getElementsByClassName('App')[0]
-        App.classList.add("AppBlur")
-    })
 
     return (
         <form className="create-post create-post-unblur">

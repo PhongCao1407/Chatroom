@@ -1,17 +1,17 @@
 /* Make the form itself clear instead of blur */
-.create-post-unblur {
+.create-subthread-unblur {
     filter: opacity(100%) !important;
     z-index: 10;
 }
 
 
 /* Blur the whole page except for the form */
-.AppBlur div:not(.create-post) div:not(.login-page){
+.AppBlur div:not(.create-subthread) div:not(.login-page){
     filter: opacity(70%);
     z-index: 1;
 }
 
-.create-post {
+.create-subthread {
     position: absolute;
     left: 0;
     right: 0;
@@ -32,7 +32,7 @@
     visibility: hidden;
 }
 
-.create-post>.create-post-title {
+.create-subthread>.create-subthread-title {
     padding: 15px 20px;
 
     background-color: #ff5c5c;
@@ -40,14 +40,14 @@
     border-radius: 30px 30px 0 0;
 }
 
-.create-post-title>h1 {
+.create-subthread-title>h1 {
     font-weight: 700;
     font-size: 30px;
     color: #ffffff;
 
 }
 
-.create-post>.create-post-main {
+.create-subthread>.create-subthread-main {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -59,24 +59,24 @@
     
 }
 
-.create-post-main>.create-post-subthread {
+.create-subthread-main>.create-subthread-subthread {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.create-post-subthread>label {
+.create-subthread-subthread>label {
     font-weight: 600;
     font-size: 18px;
 }
 
-.create-post-subthread>select {
+.create-subthread-subthread>select {
     background-color: #ffffff;
     border: 1px solid #8a8989;
     width: 150px;
 }
 
-.create-post-main>.create-post-fields {
+.create-subthread-main>.create-subthread-fields {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -84,27 +84,27 @@
     height: 100%;
 }
 
-.create-post-fields>h2 {
+.create-subthread-fields>h2 {
     font-weight: 600;
     font-size: 22px;
 }
 
-.create-post-fields>.create-post-title {
+.create-subthread-fields>.create-subthread-title {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }   
 
-.create-post-title>label {
+.create-subthread-title>label {
     font-size: 15px;
 
 }
 
-.create-post-title>input {
+.create-subthread-title>input {
     width: 100%;
 }   
 
-.create-post-fields>.create-post-body {
+.create-subthread-fields>.create-subthread-body {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -112,17 +112,17 @@
     height: 100%;
 }   
 
-.create-post-body>label {
+.create-subthread-body>label {
     font-size: 15px;
 }
 
-.create-post-body>textarea {
+.create-subthread-body>textarea {
     height: 100%;
     width: 100%;
     resize: none;
 }   
 
-.create-post-main>.submit-buttons {
+.create-subthread-main>.submit-buttons {
     display: flex;
     flex-direction: row;
     gap: 10px;

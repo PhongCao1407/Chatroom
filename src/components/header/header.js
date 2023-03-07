@@ -3,13 +3,17 @@ import './header.css'
 import logo from './static/Logo.svg';
 import home from './static/Home.png';
 import downArrow from './static/DownArrow.svg';
-import userImg from './static/User.png';
-import setting from './static/Setting.svg';
+// import userImg from './static/User.png';
+// import setting from './static/Setting.svg';
 
-import { useEffect, useState } from 'react'
-import jwt_decode from 'jwt-decode'
 
-import { clientID } from '../../googleClient';
+const showLoginForm = () => {
+    const App = document.getElementsByClassName('App')[0]
+    App.classList.add("AppBlur")
+
+    const loginForm = document.getElementsByClassName('login-page')[0]
+    loginForm.style.visibility = "visible"
+}
 
 const Header = () => {
    
@@ -29,7 +33,7 @@ const Header = () => {
             </div>
         </div>
         <div className="user-auth" id="login-button">
-          <button>Login</button>
+          <button onClick={showLoginForm}>Login</button>
         </div>
         {/* <div className="user-info" id="user-info">
             <img src={userImg} alt=""/>

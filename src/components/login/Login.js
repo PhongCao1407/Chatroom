@@ -33,12 +33,10 @@ const LoginForm = () => {
         }
 
 
-
     }
 
     useEffect(() => {
-        const App = document.getElementsByClassName('App')[0]
-        App.classList.add("AppBlur")
+        
     })
 
     return (

@@ -123,6 +123,7 @@ header {
 
 .user-auth>button:hover {
     background-color: #f97272;
+    cursor: pointer;
 }
 
 #logout-button {
