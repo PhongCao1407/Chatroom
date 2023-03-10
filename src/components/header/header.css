@@ -1,5 +1,10 @@
 /* Header */
 header {
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+
     display: grid;
     grid-template-columns: 1fr 2fr 4fr 2fr;
     align-items: center;

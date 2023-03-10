@@ -1,12 +1,16 @@
 import './Login.css'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+    const [sliderOption, setSliderOption] = useState('login')
+
     const handleSliderChange = (e) => {
-        const sliderOption = e.target.classList[0]
+        const selectedOption = e.target.classList[0]
 
-        if (sliderOption === 'signup-option') {
+        if (selectedOption === 'signup-option') {
+            setSliderOption('signup')
+
             const slider = document.getElementsByClassName('slider')[0]
             slider.classList.add('moveslider')
 
@@ -19,6 +23,8 @@ const LoginForm = () => {
             const confirmPasswordInput = document.getElementsByClassName('confirm-password')[0]
             confirmPasswordInput.style.opacity = "1"
         } else {
+            setSliderOption('login')
+
             const slider = document.getElementsByClassName('slider')[0]
             slider.classList.remove('moveslider')
 
@@ -27,7 +33,7 @@ const LoginForm = () => {
 
             const signupOption = document.getElementsByClassName('signup-option')[0]
             signupOption.removeAttribute('id')
-            
+
             const confirmPasswordInput = document.getElementsByClassName('confirm-password')[0]
             confirmPasswordInput.style.opacity = "0"
         }
@@ -35,9 +41,72 @@ const LoginForm = () => {
 
     }
 
-    useEffect(() => {
-        
-    })
+    const onFormSubmit = (e) => {
+        console.log('here')
+        if (sliderOption === 'signup') {
+            props.handleSignup(e)
+        } else {
+            props.handleLogin(e)
+        }
+    }
+
+    const handlePasswordChange = (e) => {
+        const passwordComponent = e.target
+        const passwordValue = passwordComponent.value
+
+        // Check for password validity
+        const MIN_PASSWORD_LENGTH = 8
+
+        if (passwordValue.length < MIN_PASSWORD_LENGTH) {
+            passwordComponent.classList.add('invalid-field')
+            passwordComponent.setCustomValidity('Error: Please make sure the password is at least 8 characters long')
+        } else {
+            passwordComponent.classList.remove('invalid-field')
+            passwordComponent.setCustomValidity('')
+        }
+
+        // If the slider option is signup, check to validity between password field and confirm password field
+        if (sliderOption === 'signup') {
+            // If the confirm password already exist, and user is trying to change the password to match it
+            const confirmPasswordComponent = document.getElementById('confirm-password-field')
+            const confirmPasswordValue = confirmPasswordComponent.value
+            if (passwordValue !== confirmPasswordValue) {
+                console.log('password dont match')
+                confirmPasswordComponent.classList.add('invalid-field')
+                confirmPasswordComponent.setCustomValidity('Error: Please make sure the passwords match')
+            } else {
+                console.log('password match')
+
+                confirmPasswordComponent.classList.remove('invalid-field')
+                confirmPasswordComponent.setCustomValidity('')
+            }
+        }
+
+
+        // Change password value in App.js
+        props.handlePasswordChange(e)
+    }
+
+    // Check if the password and confirm password match
+    const checkPasswordMatch = (e) => {
+
+        const passwordValue = document.getElementById('password-field').value
+        const confirmPasswordComponent = e.target
+        const confirmPasswordValue = confirmPasswordComponent.value
+
+        if (passwordValue !== confirmPasswordValue) {
+            console.log('password dont match')
+
+            confirmPasswordComponent.classList.add('invalid-field')
+            confirmPasswordComponent.setCustomValidity('Error: Please make sure the passwords match')
+        } else {
+            console.log('password match')
+
+            confirmPasswordComponent.classList.remove('invalid-field')
+            confirmPasswordComponent.setCustomValidity('')
+        }
+
+    }
 
     return (
         <div className="login-page login-form-unblur">
@@ -48,15 +117,20 @@ const LoginForm = () => {
                 <button className="signup-option login-form-unblur" onClick={handleSliderChange}>Signup</button>
             </div>
 
-            <form className="signup-form login-form-unblur">
+            <form className="signup-form login-form-unblur"
+                onSubmit={(e) => onFormSubmit(e)}>
 
 
-                <input className="signup-input login-form-unblur" type="text" placeholder="Email" />
-                <input className="signup-input login-form-unblur" type="password" placeholder="Password" />
-                <input className="confirm-password signup-input login-form-unblur" type="password" placeholder="Confirm Password" />
+                <input className="signup-input login-form-unblur" type="text" placeholder="Username"
+                    onChange={props.handleUsernameChange} />
+                <input className="signup-input login-form-unblur" type="password" placeholder="Password" id="password-field"
+                    onChange={handlePasswordChange} />
+                <input className="confirm-password signup-input login-form-unblur" type="password" placeholder="Confirm Password" id="confirm-password-field"
+                    onChange={checkPasswordMatch} />
 
 
-                <button className="login-form-unblur">Login</button>
+
+                <button className="login-form-unblur" type="submit">Login</button>
             </form>
 
         </div>

@@ -121,11 +121,21 @@
 
     background-color: #eeeeee;
     color: #303030;
+
+}
+
+.signup-input:focus {
+    outline: 2px solid #7d7d7d;
 }
 
 .signup-input.confirm-password {
-    transition: all 0.5s ease-in;
+    transition: all 0.2s ease-in;
     opacity: 0%;
+}
+
+.invalid-field:focus {
+    transition: none;
+    outline: 2px solid #f76c6c;
 }
 
 .signup-form>button {
