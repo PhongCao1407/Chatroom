@@ -9,7 +9,7 @@ import { CreateSubthread } from './components/createSubthread/createSubthread';
 import loginService from './services/loginService'
 import userService from './services/userService';
  
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [username, setUsername] = useState('')
@@ -25,25 +25,15 @@ function App() {
     setPassword(e.target.value)
   }
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault()
-    
-    try {
-      const user = await loginService.login({
-        username, password
-      })
-      setUser(user)
-      setUsername('')
-      setPassword('')
-
-      console.log(user)
-    } catch (exception) {
-      console.log(exception)
-    }
+    loginUser().then(() => {
+      window.location.reload()
+    })
   }
 
-  const handleSignup = async (e) => {
-    e.preventDefault()
+  const handleSignup = (e) => {
+    // e.preventDefault()
 
     let confirmPasswordComponent = document.getElementsByClassName('confirm-password')[0]
     let confirmPasswordValue = confirmPasswordComponent.value
@@ -61,13 +51,7 @@ function App() {
           }
         ).then( async () => {
           // Sign in after new user is created
-          const user = await loginService.login({
-            username, password
-          })
-  
-          setUser(user)
-          setUsername('')
-          setPassword('')
+          loginUser()
         })
       } catch (exception) {
         console.log(exception)
@@ -76,16 +60,52 @@ function App() {
     }
   }
 
+  const loginUser = async () => {
+    try {
+      const user = await loginService.login({
+        username, password
+      })
+
+      window.localStorage.setItem(
+        'loggedChatroomUser', JSON.stringify(user)
+      )
+
+      setUser(user)
+      setUsername('')
+      setPassword('')
+
+      console.log(user)
+    } catch (exception) {
+      console.log(exception)
+    }
+  }
+
+  const signOutUser = () => {
+    window.localStorage.removeItem('loggedChatroomUser')
+    window.location.reload()
+  }
+
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem('loggedChatroomUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+    }
+  }, [])
+
   return (
     <div className="App">
       <LoginForm 
         handleUsernameChange={handleUsernameChange} 
         handlePasswordChange={handlePasswordChange} 
         handleLogin={handleLogin}
-        handleSignup={handleSignup}/>
+        handleSignup={handleSignup}
+      />
       <CreatePost/>
       <CreateSubthread/>
-      <Header/>
+      <Header
+        signOutUser={signOutUser}
+      />
       <Thread/>
     </div>
   );

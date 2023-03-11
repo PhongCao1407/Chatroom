@@ -1,17 +1,21 @@
 /* Header */
 header {
+    box-sizing: border-box;
+
     position: fixed;
     top: 0;
 
     width: 100%;
 
     display: grid;
-    grid-template-columns: 1fr 2fr 4fr 2fr;
+    grid-template-columns: 1fr 3fr 2fr;
     align-items: center;
     gap: 5px;
-    height: 60px;
+    height: 70px;
     padding: 5px 15px;
     background-color: #ffffff;
+
+    border: 1px solid #D1D9DF;
 }
 
 .logo, .user-info, .settings {
@@ -30,38 +34,35 @@ header {
 }
 
 
-.subscribed-subthread {
+.subthread-options {
     padding: 10px 10px;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.thread-bar {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.subthread-options>select {
+    height: 70%;
+    width: 100%;
+
+    background-color: transparent;
+    border: 1px solid #D1D9DF;
+    border-radius: 15px;
+
+    padding: 5px 10px;
+
+    font-weight: 600;
+    font-size: 1.1em;
+
 }
 
-.thread-bar>.home {
-    height: 30px;
-    width: 30px;
-    padding-bottom: 3px;
+.subthread-options>select>option {
+    background-color: #ffffff;
 }
 
-.thread-bar>p {
-    padding-left: 5px;
-    font-size: 17px;
-    font-weight: 1000;
-}
 
-.thread-bar>.down-arrow {
-    margin-left: auto;
-    height: 15px;
-    width: 15px;
-}
 
 .search {
     padding: 0 10px;
@@ -72,7 +73,7 @@ header {
 
 .search>.search-bar {
     height: 100%;
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -89,30 +90,15 @@ header {
 .user-auth {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    min-height: 100%;
-    width: 100%;
-}
-
-
-.user-info {
-    gap: 12px;
-    display: none;
-}
-
-.user-info-bar>p {
-  font-weight: 600;
-}
-
-.user-info>img {
-    height: 30px;
-    width: 30px;
-    border-radius: 5px;
-}
-
-.user-auth {
     height: 100%;
+    width: 100%;
+
 }
+
+
+
 
 .user-auth>button {
     height: 70%;
@@ -131,10 +117,29 @@ header {
     cursor: pointer;
 }
 
+.user-info {
+    gap: 12px;
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+}
+
+.user-info-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.user-info-bar>p {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+
 #logout-button {
     margin-left: auto;
     height: 70%;
-    width: max-content;
+    width: 200px;
 
     padding: 10px 15px;
     border-radius: 50px;
@@ -147,6 +152,7 @@ header {
 
 #logout-button:hover {
     background-color: #f97272;
+    cursor: pointer;
 }
 
 .settings>img {

@@ -2,16 +2,39 @@ import './Login.css'
 
 import { useEffect, useState } from 'react'
 
+import CloseIcon from './static/CloseIcon.svg'
+
 const LoginForm = (props) => {
     const [sliderOption, setSliderOption] = useState('login')
+
+    const closeForm = (e) => {
+        // This has to be remove to avoid graphic lag
+        const slider = document.getElementsByClassName('slider')[0]
+        slider.style.transition = null
+        const confirmPasswordInput = document.getElementsByClassName('confirm-password')[0]
+        confirmPasswordInput.style.transition = null
+
+        const App = document.getElementsByClassName('App')[0]
+        App.classList.remove("AppBlur")
+
+        const loginForm = document.getElementsByClassName('login-page')[0]
+        loginForm.style.visibility = "hidden"
+    }
 
     const handleSliderChange = (e) => {
         const selectedOption = e.target.classList[0]
 
+        // This have to be added when the form is already render, so there will be no graphic lag
+        const slider = document.getElementsByClassName('slider')[0]
+        slider.style.transition = 'all 0.5s ease-in-out'
+
+        const confirmPasswordInput = document.getElementsByClassName('confirm-password')[0]
+        confirmPasswordInput.style.transition = 'all 0.2s ease-in'
+
+
         if (selectedOption === 'signup-option') {
             setSliderOption('signup')
 
-            const slider = document.getElementsByClassName('slider')[0]
             slider.classList.add('moveslider')
 
             const loginOption = document.getElementsByClassName('login-option')[0]
@@ -20,8 +43,8 @@ const LoginForm = (props) => {
             const signupOption = document.getElementsByClassName('signup-option')[0]
             signupOption.setAttribute('id', 'current-option')
 
-            const confirmPasswordInput = document.getElementsByClassName('confirm-password')[0]
             confirmPasswordInput.style.opacity = "1"
+
         } else {
             setSliderOption('login')
 
@@ -37,7 +60,6 @@ const LoginForm = (props) => {
             const confirmPasswordInput = document.getElementsByClassName('confirm-password')[0]
             confirmPasswordInput.style.opacity = "0"
         }
-
 
     }
 
@@ -110,6 +132,11 @@ const LoginForm = (props) => {
 
     return (
         <div className="login-page login-form-unblur">
+            <div className="exit-form">
+                <button className="exit-button" onClick={closeForm}>
+                    <img src={CloseIcon} />
+                </button>
+            </div>
 
             <div className="slider login-form-unblur" id="slider"></div>
             <div className="slider-options login-form-unblur">
