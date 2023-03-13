@@ -33,60 +33,6 @@ header {
     width: 40px;
 }
 
-
-.subthread-options {
-    padding: 10px 10px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.subthread-options>select {
-    height: 70%;
-    width: 100%;
-
-    background-color: transparent;
-    border: 1px solid #D1D9DF;
-    border-radius: 15px;
-
-    padding: 5px 10px;
-
-    font-weight: 600;
-    font-size: 1.1em;
-
-}
-
-.subthread-options>select>option {
-    background-color: #ffffff;
-}
-
-
-
-.search {
-    padding: 0 10px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.search>.search-bar {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.search>.search-bar>input {
-    min-height: 80%;
-    width: 100%;
-    background-color: #D1D9DF;
-    border-style: none;
-    border-radius: 20px;
-    padding: 0 10px;
-}
-
 .user-auth {
     display: flex;
     flex-direction: row;

@@ -11,6 +11,8 @@
     align-items: center;
     justify-content: space-between;
     user-select: none;
+
+    font-weight: 600;
   }
   
   .dropdown-menu {

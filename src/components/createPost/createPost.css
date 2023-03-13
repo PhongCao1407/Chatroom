@@ -59,18 +59,18 @@
     
 }
 
-.create-post-main>.create-post-subthread {
+.create-post-main>.create-post-thread {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.create-post-subthread>label {
+.create-post-thread>label {
     font-weight: 600;
     font-size: 18px;
 }
 
-.create-post-subthread>select {
+.create-post-thread>select {
     background-color: #ffffff;
     border: 1px solid #8a8989;
     width: 150px;

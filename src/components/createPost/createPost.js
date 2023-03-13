@@ -9,10 +9,10 @@ const CreatePost = () => {
             </div>
             
             <div className="create-post-main create-post-unblur">
-                <div className="create-post-subthread create-post-unblur">
-                    <label htmlFor="subthread create-post-unblur">Please Choose A Subthread</label>
-                    <select name="subthread create-post-unblur">
-                        <option value="test create-post-unblur">Subthread..</option>
+                <div className="create-post-thread create-post-unblur">
+                    <label htmlFor="thread create-post-unblur">Please Choose A Thread</label>
+                    <select name="thread create-post-unblur">
+                        <option value="test create-post-unblur">Thread..</option>
                         
                     </select>
                 </div>

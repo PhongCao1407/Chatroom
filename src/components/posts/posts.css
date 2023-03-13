@@ -54,7 +54,7 @@
     gap: 10px;
 }
 
-.post-info>.post-subthread-name {
+.post-info>.post-thread-name {
     font-weight: bold;
     text-decoration: underline;
 }

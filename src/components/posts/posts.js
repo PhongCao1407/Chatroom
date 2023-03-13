@@ -14,7 +14,7 @@ const Post = () => {
             </div>
             <div className="post-display">
                 <div className="post-info">
-                    <p className="post-subthread-name">c/Home</p>
+                    <p className="post-thread-name">c/Home</p>
                     <p className="post-username">u/User123456</p>
                 </div>
                 <div className="post-title">

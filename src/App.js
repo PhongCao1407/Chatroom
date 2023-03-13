@@ -4,10 +4,11 @@ import { Header } from './components/header/header';
 
 import { LoginForm } from './components/login/Login';
 import { CreatePost } from './components/createPost/createPost'
-import { CreateSubthread } from './components/createSubthread/createSubthread';
+import { CreateThread } from './components/createThread/createThread';
 
 import loginService from './services/loginService'
 import userService from './services/userService';
+import threadService from './services/threadService'
  
 import { useEffect, useState } from 'react';
 
@@ -70,6 +71,7 @@ function App() {
         'loggedChatroomUser', JSON.stringify(user)
       )
 
+      threadService.setThreadToken(user.token)
       setUser(user)
       setUsername('')
       setPassword('')
@@ -90,6 +92,7 @@ function App() {
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
+      threadService.setThreadToken(user.token)
     }
   }, [])
 
@@ -102,7 +105,7 @@ function App() {
         handleSignup={handleSignup}
       />
       <CreatePost/>
-      <CreateSubthread/>
+      <CreateThread/>
       <Header
         signOutUser={signOutUser}
       />

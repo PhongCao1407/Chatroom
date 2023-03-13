@@ -22,19 +22,19 @@
     border-radius: 5px 5px 0 0;
 }
 
-.subthread-name {
+.thread-name {
     padding: 10px 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.subthread-name>h2 {
+.thread-name>h2 {
     font-size: 20px;
     font-weight: bold;
 }
 
-.subthread-name>p {
+.thread-name>p {
     font-size: 14px;
 }
 
@@ -66,6 +66,7 @@
 .create-post-option>button {
     background-color: #ff5c5c;
     color: #ffffff;
+    visibility: hidden;
 }
 
 .create-post-option>button:hover {
@@ -77,6 +78,7 @@
     background-color: #ffffff;
     color: #ff5c5c;
     border: 1px solid #ff5c5c;
+    visibility: hidden;
 }
 
 .create-community-option>button:hover {

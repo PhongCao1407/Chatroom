@@ -16,13 +16,12 @@ const Header = (props) => {
         { value: "test1", label: "Test1" },
         { value: "test2", label: "Test2" },
         { value: "test3", label: "Test3" },
-        
-      ];
+    ];
 
     const showLoginForm = () => {
         const App = document.getElementsByClassName('App')[0]
         App.classList.add("AppBlur")
-    
+
         const loginForm = document.getElementsByClassName('login-page')[0]
         loginForm.style.visibility = "visible"
     }
@@ -44,40 +43,31 @@ const Header = (props) => {
             userInfo.style.display = 'none'
         }
     }, [])
-   
-    return (
-      <header>
-        <img src={logo} alt="" className="logo"/>
-        {/* <div className="subthread-options">
-            <select className="thread-bar">
-                <option>Home</option>
-                <option>Test1</option>
-                <option>Test2</option>
-                <option>Test3</option>
-                <option>Test4</option>
-            </select>
-        </div>     */}
 
-        <Dropdown
+    return (
+        <header>
+            <img src={logo} alt="" className="logo" />
+
+            <Dropdown
                 isSearchable
-                placeHolder="Select The Subthread.."
+                placeHolder="Select The Thread.."
                 options={options}
                 onChange={(value) => console.log(value)}
             />
 
-        <div className="user-auth" id="login-button">
-          <button onClick={showLoginForm}>Login</button>
-        </div>
-        <div className="user-info" id="user-info">
-            <div className="user-info-bar">
-                <p id="username"></p>
+            <div className="user-auth" id="login-button">
+                <button onClick={showLoginForm}>Login</button>
             </div>
-            <button id="logout-button" onClick={props.signOutUser}>Sign Out</button>
-        </div>
-        
-        
-      </header>
-    )
-  }
+            <div className="user-info" id="user-info">
+                <div className="user-info-bar">
+                    <p id="username"></p>
+                </div>
+                <button id="logout-button" onClick={props.signOutUser}>Sign Out</button>
+            </div>
 
-  export {Header}
+
+        </header>
+    )
+}
+
+export { Header }
