@@ -24,12 +24,11 @@ const CloseIcon = () => {
 
 const Dropdown = ({
     placeHolder,
-    isMulti,
     isSearchable,
     onChange
 }) => {
     const [showMenu, setShowMenu] = useState(false);
-    const [selectedValue, setSelectedValue] = useState(isMulti ? [] : null);
+    const [selectedValue, setSelectedValue] = useState(null);
     const [searchValue, setSearchValue] = useState("");
 
     const [options, setOptions] = useState([])
@@ -68,23 +67,7 @@ const Dropdown = ({
         if (!selectedValue || selectedValue.length === 0) {
             return placeHolder;
         }
-        if (isMulti) {
-            return (
-                <div className="dropdown-tags">
-                    {selectedValue.map((option) => (
-                        <div key={option.value} className="dropdown-tag-item">
-                            {option.label}
-                            <span
-                                onClick={(e) => onTagRemove(e, option)}
-                                className="dropdown-tag-close"
-                            >
-                                <CloseIcon />
-                            </span>
-                        </div>
-                    ))}
-                </div>
-            );
-        }
+        
         return selectedValue.label;
     };
 
@@ -92,33 +75,18 @@ const Dropdown = ({
         return selectedValue.filter((o) => o.value !== option.value);
     };
 
-    const onTagRemove = (e, option) => {
-        e.stopPropagation();
-        const newValue = removeOption(option);
-        setSelectedValue(newValue);
-        onChange(newValue);
-    };
+    
 
     const onItemClick = (option) => {
         let newValue;
-        if (isMulti) {
-            if (selectedValue.findIndex((o) => o.value === option.value) >= 0) {
-                newValue = removeOption(option);
-            } else {
-                newValue = [...selectedValue, option];
-            }
-        } else {
-            newValue = option;
-        }
+        
+        newValue = option;
+        
         setSelectedValue(newValue);
         onChange(newValue);
     };
 
     const isSelected = (option) => {
-        if (isMulti) {
-            return selectedValue.filter((o) => o.value === option.value).length > 0;
-        }
-
         if (!selectedValue) {
             return false;
         }
@@ -131,7 +99,7 @@ const Dropdown = ({
     };
 
     const DropdownMenu = () => {
-        
+
 
         const getOptions = () => {
             threadService.getAllThreads()
@@ -146,7 +114,7 @@ const Dropdown = ({
                     }
                     console.log(newOptions)
                     setOptions(newOptions)
-                    
+
                 })
 
         }
@@ -156,14 +124,14 @@ const Dropdown = ({
             if (options.length === 0) {
                 getOptions()
             }
-            
+
         }, [])
 
         return (
             <div className="dropdown-menu create-post-unblur">
                 {isSearchable && (
                     <div className="search-box create-post-unblur">
-                        <input onChange={onSearch} value={searchValue} ref={searchRef} className="create-post-unblur"/>
+                        <input onChange={onSearch} value={searchValue} ref={searchRef} className="create-post-unblur" />
                     </div>
                 )}
                 {options.map((option) => {
