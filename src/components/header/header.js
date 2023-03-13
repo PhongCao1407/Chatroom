@@ -11,12 +11,7 @@ import { Dropdown } from '../dropdown/Dropdown';
 
 
 const Header = (props) => {
-    const options = [
-        { value: "home", label: "Home" },
-        { value: "test1", label: "Test1" },
-        { value: "test2", label: "Test2" },
-        { value: "test3", label: "Test3" },
-    ];
+    
 
     const showLoginForm = () => {
         const App = document.getElementsByClassName('App')[0]
@@ -28,6 +23,9 @@ const Header = (props) => {
 
 
     useEffect(() => {
+        // Get all threads to display in dropdowm menu
+
+        // User Auth
         const loginButton = document.getElementsByClassName('user-auth')[0]
         const userInfo = document.getElementsByClassName('user-info')[0]
 
@@ -51,7 +49,6 @@ const Header = (props) => {
             <Dropdown
                 isSearchable
                 placeHolder="Select The Thread.."
-                options={options}
                 onChange={(value) => console.log(value)}
             />
 

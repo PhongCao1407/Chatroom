@@ -6,7 +6,7 @@
 
 
 /* Blur the whole page except for the form */
-.AppBlur div:not(.create-thread) div:not(.login-page){
+.AppBlur div:not(.create-thread) div:not(.login-page) div:not(.dropdown-container){
     filter: opacity(70%);
     z-index: 1;
 }

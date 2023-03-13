@@ -16,6 +16,8 @@ header {
     background-color: #ffffff;
 
     border: 1px solid #D1D9DF;
+
+    z-index: 20;
 }
 
 .logo, .user-info, .settings {

@@ -3,6 +3,7 @@
     border: 1px solid #ccc;
     position: relative;
     border-radius: 5px;
+    z-index: 99;
   }
   
   .dropdown-input {
@@ -24,7 +25,8 @@
     overflow: auto;
     max-height: 150px;
     background-color: #fff;
-    z-index: 99;
+    z-index: 99 !important;
+
   }
   
   .dropdown-item {
@@ -73,3 +75,6 @@
     border-radius: 5px;
   }
   
+  .search-box {
+    position: relative;
+  }
