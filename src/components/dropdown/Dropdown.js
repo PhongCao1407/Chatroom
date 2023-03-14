@@ -29,21 +29,13 @@ const Dropdown = ({
 }) => {
     const [showMenu, setShowMenu] = useState(false);
     const [selectedValue, setSelectedValue] = useState(null);
-    const [searchValue, setSearchValue] = useState("");
+    
 
-    const [options, setOptions] = useState([])
+    
 
     const searchRef = useRef();
     const inputRef = useRef();
 
-
-
-    useEffect(() => {
-        setSearchValue("");
-        if (showMenu && searchRef.current) {
-            searchRef.current.focus();
-        }
-    }, [showMenu]);
 
     useEffect(() => {
         const handler = (e) => {
@@ -94,12 +86,9 @@ const Dropdown = ({
         return selectedValue.value === option.value;
     };
 
-    const onSearch = (e) => {
-        setSearchValue(e.target.value);
-    };
-
     const DropdownMenu = () => {
-
+        const [options, setOptions] = useState([])
+        const [searchValue, setSearchValue] = useState("", );
 
         const getOptions = () => {
             threadService.getAllThreads()
@@ -108,24 +97,40 @@ const Dropdown = ({
 
                     for (let i = 0; i < threads.length; i++) {
                         const thread = threads[i]
-                        console.log(thread)
-                        const newOption = { value: thread.threadName, label: thread.threadName }
+                        
+                        const newOption = { value: thread.threadName.toLowerCase(), label: thread.threadName }
                         newOptions.push(newOption)
                     }
-                    console.log(newOptions)
+                    
+                    newOptions = newOptions.filter(
+                        (option) => {
+                            // console.log(option)
+                            return option.label.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0
+                        }
+                          
+                      );
                     setOptions(newOptions)
 
                 })
 
         }
 
+        const onSearch = (e) => {
+            setSearchValue(e.target.value);
+        };
+
+
+        useEffect(() => {
+            // setSearchValue("")
+            getOptions()
+        }, [])
+
+        // This useEffect is dependent on searchValue, it will run everytime search value is change
         useEffect(() => {
             //Set options state variable
-            if (options.length === 0) {
-                getOptions()
-            }
-
-        }, [])
+            searchRef.current.focus();
+            getOptions()
+        }, [searchValue])
 
         return (
             <div className="dropdown-menu create-post-unblur">
