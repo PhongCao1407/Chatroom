@@ -9,6 +9,7 @@ import { CreateThread } from './components/createThread/createThread';
 import loginService from './services/loginService'
 import userService from './services/userService';
 import threadService from './services/threadService'
+import postService from './services/postService'
  
 import { useEffect, useState } from 'react';
 
@@ -72,6 +73,7 @@ function App() {
       )
 
       threadService.setThreadToken(user.token)
+      postService.setPostToken(user.token)
       setUser(user)
       setUsername('')
       setPassword('')
@@ -93,6 +95,7 @@ function App() {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
       threadService.setThreadToken(user.token)
+      postService.setPostToken(user.token)
     }
   }, [])
 

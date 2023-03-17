@@ -71,11 +71,6 @@
     font-size: 18px;
 }
 
-.create-post-thread>select {
-    background-color: #ffffff;
-    border: 1px solid #8a8989;
-    width: 150px;
-}
 
 .create-post-main>.create-post-fields {
     display: flex;
@@ -102,6 +97,7 @@
 }
 
 .create-post-title>input {
+    font-size: 15px;
     width: 100%;
 }   
 
@@ -120,6 +116,7 @@
 .create-post-body>textarea {
     height: 100%;
     width: 100%;
+    font-size: 15px;
     resize: none;
 }   
 
@@ -133,7 +130,6 @@
     border-radius: 10px;
     height: 25px;
     width: 125px;
-
 
     font-weight: 600;
 }

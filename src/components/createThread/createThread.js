@@ -5,9 +5,6 @@ import threadService from '../../services/threadService'
 import { useEffect, useState } from 'react'
 
 
-
-
-
 const CreateThread = () => {
     const [threadName, setThreadName] = useState('')
     const [threadDescription, setThreadDescription] = useState('')
