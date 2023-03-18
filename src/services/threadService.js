@@ -9,6 +9,11 @@ const getAllThreads = async () => {
     return response.data
 }
 
+const getThread = async (threadName) => {
+    const response = await axios.get(baseURL + '/threadName/' + threadName)
+    return response.data
+}
+
 const setThreadToken = newToken => {  
     token = `Bearer ${newToken}`
 }
@@ -25,4 +30,4 @@ const createNewThread = async (data) => {
 }
 
 
-export default { createNewThread, setThreadToken, getAllThreads }
+export default { createNewThread, setThreadToken, getThread, getAllThreads }

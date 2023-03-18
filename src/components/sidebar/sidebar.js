@@ -2,9 +2,14 @@ import './sidebar.css'
 
 import bannerImage from "./static/Caspar David Friedrich/Landschaft mit Gebirgssee, Morgen.jpeg"
 
-import { useEffect } from 'react'
+import threadService from '../../services/threadService'
 
-const Sidebar = () => {
+import { useEffect, useState } from 'react'
+
+const Sidebar = (props) => {
+    const [threadName, setThreadName] = useState('')
+    const [threadDescription, setThreadDescription] = useState('')
+
     const showPostForm = () => {
         const App = document.getElementsByClassName('App')[0]
         App.classList.add("AppBlur")
@@ -21,6 +26,14 @@ const Sidebar = () => {
         threadForm.style.visibility = "visible"
     }
 
+    const getThreadDetails = () => {
+        threadService.getThread(props.thread)
+        .then(thread => {
+            setThreadName(thread.threadName)
+            setThreadDescription(thread.threadDescription)
+        })
+    }
+
     useEffect(() => {
         // This make the buttons to create post and thread only appears when the user is logged in
         let createPostButton = document.getElementsByClassName('create-post-button')[0]
@@ -34,14 +47,20 @@ const Sidebar = () => {
         }
     }, [])
 
+    
+    useEffect(() => {
+        getThreadDetails()
+        
+    }, [props.thread])
+
     return (
         <div className="sidebar">
             <div className="mini-banner">
                 <img src={bannerImage} alt=""/>
             </div>
             <div className="thread-name">
-                <h2>Home</h2>
-                <p>This is the Home thread!</p>
+                <h2>{threadName}</h2>
+                <p>{threadDescription}</p>
             </div>
             <div className="sidebar-options">
                 <div className="line"></div>

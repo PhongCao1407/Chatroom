@@ -49,7 +49,7 @@ const Header = (props) => {
             <Dropdown
                 isSearchable
                 placeHolder="Select The Thread.."
-                onChange={(value) => console.log(value)}
+                onChange={(value) => props.setThread(value.label)}
             />
 
             <div className="user-auth" id="login-button">

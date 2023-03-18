@@ -9,6 +9,12 @@ const getAllPosts = async () => {
     return response.data
 }
 
+const getAllPostsFromThread = async (threadName) => {
+    const response = await axios.get(baseURL + '/threadName/' + threadName)
+    return response.data
+}
+
+
 const setPostToken = newToken => {  
     token = `Bearer ${newToken}`
 }
@@ -25,4 +31,4 @@ const createNewPost = async (data) => {
 }
 
 
-export default { createNewPost, setPostToken, getAllPosts }
+export default { createNewPost, setPostToken, getAllPosts, getAllPostsFromThread }

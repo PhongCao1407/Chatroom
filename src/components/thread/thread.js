@@ -4,13 +4,13 @@ import {Posts} from "../posts/posts"
 import {Sidebar} from "../sidebar/sidebar"
 
 
-const Thread = () => {
+const Thread = (props) => {
     return (
         <main>
             <div className="post-display">
-                <Posts/>
+                <Posts thread={props.thread}/>
             </div>
-            <Sidebar/>
+            <Sidebar thread={props.thread}/>
         </main>
     )
 }

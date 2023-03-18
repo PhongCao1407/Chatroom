@@ -17,6 +17,7 @@ function App() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useState('')
+  const [thread, setThread] = useState('Home')
 
 
   const handleUsernameChange = (e) => {    
@@ -99,6 +100,10 @@ function App() {
     }
   }, [])
 
+  // useEffect(() => {
+  //   console.log(thread)
+  // })
+
   return (
     <div className="App">
       <LoginForm 
@@ -110,9 +115,10 @@ function App() {
       <CreatePost/>
       <CreateThread/>
       <Header
+        setThread={setThread}
         signOutUser={signOutUser}
       />
-      <Thread/>
+      <Thread thread={thread}/>
     </div>
   );
 }
