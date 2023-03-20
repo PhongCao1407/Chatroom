@@ -1,10 +1,10 @@
 import './App.css';
-import { Thread } from './components/thread/thread';
-import { Header } from './components/header/header';
+import { Thread } from './components/thread/Thread';
+import { Header } from './components/header/Header';
 
 import { LoginForm } from './components/login/Login';
-import { CreatePost } from './components/createPost/createPost'
-import { CreateThread } from './components/createThread/createThread';
+import { CreatePost } from './components/createPost/CreatePost'
+import { CreateThread } from './components/createThread/CreateThread';
 
 import loginService from './services/loginService'
 import userService from './services/userService';

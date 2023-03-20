@@ -1,7 +1,7 @@
-import "./thread.css"
+import "./Thread.css"
 
-import {Posts} from "../posts/posts"
-import {Sidebar} from "../sidebar/sidebar"
+import {Posts} from "../posts/Posts"
+import {Sidebar} from "../sidebar/Sidebar"
 
 
 const Thread = (props) => {

@@ -1,4 +1,4 @@
-import './sidebar.css'
+import './Sidebar.css'
 
 import bannerImage from "./static/Caspar David Friedrich/Landschaft mit Gebirgssee, Morgen.jpeg"
 

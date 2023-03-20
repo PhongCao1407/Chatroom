@@ -1,4 +1,4 @@
-import './createThread.css'
+import './CreateThread.css'
 
 import threadService from '../../services/threadService'
 

@@ -1,4 +1,4 @@
-import './posts.css'
+import './Posts.css'
 
 import upvote from "./static/upvote.svg";
 import downvote from "./static/downvote.svg";

@@ -1,4 +1,4 @@
-import './createPost.css'
+import './CreatePost.css'
 
 import { Dropdown } from '../dropdown/Dropdown'
 

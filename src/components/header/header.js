@@ -1,4 +1,4 @@
-import './header.css'
+import './Header.css'
 
 import logo from './static/Logo.svg';
 import home from './static/Home.png';
