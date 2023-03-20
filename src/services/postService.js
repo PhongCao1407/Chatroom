@@ -28,5 +28,10 @@ const createNewPost = async (data) => {
     return response.data
 }
 
+const deletePost = async (postID) => {
+    const response = await axios.delete(baseURL + '/' + postID)
+    return response.data
+}
 
-export default { createNewPost, setPostToken, getAllPosts, getAllPostsFromThread }
+
+export default { createNewPost, setPostToken, getAllPosts, getAllPostsFromThread, deletePost }
