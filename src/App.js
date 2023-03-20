@@ -29,14 +29,14 @@ function App() {
   }
 
   const handleLogin = (e) => {
-    e.preventDefault()
+    e.preventDefault() // This is needed so that the page will only reload after the request is finish
     loginUser().then(() => {
       window.location.reload()
     })
   }
 
   const handleSignup = (e) => {
-    // e.preventDefault()
+    e.preventDefault() // This is needed so that the page will only reload after the request is finish
 
     let confirmPasswordComponent = document.getElementsByClassName('confirm-password')[0]
     let confirmPasswordValue = confirmPasswordComponent.value
@@ -44,7 +44,6 @@ function App() {
     if (confirmPasswordValue !== password) {
       console.log('bad password')
     } else {
-
       try {
         userService.signUp(
           {
@@ -53,10 +52,13 @@ function App() {
           }
         ).then( async () => {
           // Sign in after new user is created
-          loginUser()
+          loginUser().then(() => {
+            window.location.reload()
+          })
         })
-      } catch (exception) {
-        console.log(exception)
+      } catch (error) {
+        
+        console.log(error)
       }
 
     }
@@ -77,8 +79,8 @@ function App() {
       setUser(user)
       setUsername('')
       setPassword('')
-    } catch (exception) {
-      console.log(exception)
+    } catch (error) {
+      console.log(error)
     }
   }
 
