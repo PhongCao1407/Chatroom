@@ -4,56 +4,20 @@ import upvote from "./static/upvote.svg";
 import downvote from "./static/downvote.svg";
 import comment from "./static/Comment.png"
 
-import CloseIcon from "./static/CloseIcon.svg"
-
 import postService from '../../services/postService';
 
 import { useEffect, useState } from 'react';
 
-const Post = ({index ,post}) => {
-
-    const deletePost = () => {
-        postService.deletePost(post.id)
-        .then(() => {
-            //Refresh page after deleting a post
-            window.location.reload()
-        })
-    }
-
-    //Make sure the delete post button is only shown for the psot belonging to the user
-    useEffect(() => {
-        const deletePostButton = document.getElementById('delete-post-' + index)
-
-        const userToken = window.localStorage
-        if (userToken.length === 0) { //If the user is not logged in
-            deletePostButton.style.visibility = 'hidden'
-        } else {
-            const username = JSON.parse(userToken.loggedChatroomUser).username
-
-            if (username !== post.username) {
-                deletePostButton.style.visibility = 'hidden'
-            }
-        }
-
-        
-    })
+const Post = ({post}) => {
 
     return (
         <div className="post">
-            <div className="delete-post" id={'delete-post-' + index}>
-                    <button className="delete-button" onClick={deletePost}>
-                        <img src={CloseIcon} alt="close icon"/>
-                    </button>
-                </div>
-
             <div className="like-bar">
-                {/* <img src={upvote} alt="" className="up arrow" />
+                <img src={upvote} alt="" className="up arrow" />
                 <p>{post.postUpvote}</p>
-                <img src={downvote} alt="" className="down arrow" /> */}
+                <img src={downvote} alt="" className="down arrow" />
             </div>
             <div className="post-display">
-                
-                
                 <div className="post-info">
                     <p className="post-thread-name">{'c/' + post.threadName}</p>
                     <p className="post-username">{'u/' + post.username}</p>
@@ -64,10 +28,10 @@ const Post = ({index ,post}) => {
                 <div className="main-post-display">
                     {post.postBody}
                 </div>
-                {/* <div className="post-options">
+                <div className="post-options">
                     <img src={comment} alt="" />
                     <p>{post.postComments.length} Comments</p>
-                </div> */}
+                </div>
             </div>
         </div>
     )
@@ -103,8 +67,7 @@ const Posts = (props) => {
             {postList.map((post, index) => {
                 return (
                     <Post 
-                        key={index}
-                        index={index}
+                        key={post.threadName + index}
                         post={post}/>
                 )
             })}
