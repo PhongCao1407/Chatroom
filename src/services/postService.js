@@ -20,8 +20,6 @@ const setPostToken = newToken => {
 }
 
 const createNewPost = async (data) => {
-    console.log(data)
-
     const config = {    
         headers: { Authorization: token },  
     }

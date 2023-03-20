@@ -64,7 +64,6 @@ const LoginForm = (props) => {
     }
 
     const onFormSubmit = (e) => {
-        console.log('here')
         if (sliderOption === 'signup') {
             props.handleSignup(e)
         } else {
@@ -93,12 +92,9 @@ const LoginForm = (props) => {
             const confirmPasswordComponent = document.getElementById('confirm-password-field')
             const confirmPasswordValue = confirmPasswordComponent.value
             if (passwordValue !== confirmPasswordValue) {
-                console.log('password dont match')
                 confirmPasswordComponent.classList.add('invalid-field')
                 confirmPasswordComponent.setCustomValidity('Error: Please make sure the passwords match')
             } else {
-                console.log('password match')
-
                 confirmPasswordComponent.classList.remove('invalid-field')
                 confirmPasswordComponent.setCustomValidity('')
             }
@@ -117,13 +113,9 @@ const LoginForm = (props) => {
         const confirmPasswordValue = confirmPasswordComponent.value
 
         if (passwordValue !== confirmPasswordValue) {
-            console.log('password dont match')
-
             confirmPasswordComponent.classList.add('invalid-field')
             confirmPasswordComponent.setCustomValidity('Error: Please make sure the passwords match')
         } else {
-            console.log('password match')
-
             confirmPasswordComponent.classList.remove('invalid-field')
             confirmPasswordComponent.setCustomValidity('')
         }

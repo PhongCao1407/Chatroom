@@ -104,7 +104,6 @@ const Dropdown = ({
                     
                     newOptions = newOptions.filter(
                         (option) => {
-                            // console.log(option)
                             return option.label.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0
                         }
                           

@@ -19,8 +19,6 @@ const setThreadToken = newToken => {
 }
 
 const createNewThread = async (data) => {
-    console.log(data)
-
     const config = {    
         headers: { Authorization: token },  
     }

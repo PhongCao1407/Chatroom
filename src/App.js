@@ -42,9 +42,8 @@ function App() {
     let confirmPasswordValue = confirmPasswordComponent.value
 
     if (confirmPasswordValue !== password) {
-      console.log('bad')
+      console.log('bad password')
     } else {
-      console.log('good')
 
       try {
         userService.signUp(
@@ -78,8 +77,6 @@ function App() {
       setUser(user)
       setUsername('')
       setPassword('')
-
-      console.log(user)
     } catch (exception) {
       console.log(exception)
     }
@@ -99,10 +96,6 @@ function App() {
       postService.setPostToken(user.token)
     }
   }, [])
-
-  // useEffect(() => {
-  //   console.log(thread)
-  // })
 
   return (
     <div className="App">
