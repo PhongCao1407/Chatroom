@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react'
 import CloseIcon from './static/CloseIcon.svg'
 
 const LoginForm = (props) => {
+    const MIN_PASSWORD_LENGTH = 8
+
     const [sliderOption, setSliderOption] = useState('login')
 
     const closeForm = (e) => {
@@ -75,9 +77,8 @@ const LoginForm = (props) => {
         const passwordComponent = e.target
         const passwordValue = passwordComponent.value
 
-        // Check for password validity
-        const MIN_PASSWORD_LENGTH = 8
 
+        // Check for password validity
         if (passwordValue.length < MIN_PASSWORD_LENGTH) {
             passwordComponent.classList.add('invalid-field')
             passwordComponent.setCustomValidity('Error: Please make sure the password is at least 8 characters long')

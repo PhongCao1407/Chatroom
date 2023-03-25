@@ -14,6 +14,8 @@ import postService from './services/postService'
 import { useEffect, useState } from 'react';
 
 function App() {
+  const MIN_PASSWORD_LENGTH = 8
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useState('')
@@ -41,8 +43,19 @@ function App() {
     let confirmPasswordComponent = document.getElementsByClassName('confirm-password')[0]
     let confirmPasswordValue = confirmPasswordComponent.value
 
+    if (username.length === 0) {
+      alert("Please enter a valid username")
+      return
+    }
+
+    if (password.length < MIN_PASSWORD_LENGTH) {
+      alert("Please enter a valid password")
+      return
+    } 
+
     if (confirmPasswordValue !== password) {
-      console.log('bad password')
+      alert("Please make sure the passwords match")
+      return
     } else {
       try {
         userService.signUp(
@@ -80,6 +93,7 @@ function App() {
       setUsername('')
       setPassword('')
     } catch (error) {
+      alert("There was an Error logging in, please enter the correct credentials")
       console.log(error)
     }
   }
