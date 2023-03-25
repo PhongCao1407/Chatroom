@@ -68,6 +68,8 @@ function App() {
           loginUser().then(() => {
             window.location.reload()
           })
+        }).catch((error) => {
+          alert("Error creating user")
         })
       } catch (error) {
 
